@@ -1,0 +1,24 @@
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div class="qty mt-5">
+    <span class="minus">-</span>
+    <input type="number" class="count" name="qty" value="0">
+    <span class="plus">+</span>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.count').prop('disabled', true);
+        $(document).on('click', '.plus', function() {
+            $('.count').val(parseInt($('.count').val()) + 1);
+        });
+        $(document).on('click', '.minus', function() {
+            $('.count').val(parseInt($('.count').val()) - 1);
+            if ($('.count').val() == 0) {
+                $('.count').val(1);
+            }
+        });
+    });
+</script>
